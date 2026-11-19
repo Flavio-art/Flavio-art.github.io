@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["N9Y8TXP24J.com.flavio.jassapp"],
+        "components": [ { "/": "/j/*", "comment": "Jass-Tisch-Einladung" } ]
+      }
+    ]
+  }
+}

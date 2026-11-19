@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jass-Einladung</title>
+<meta property="og:title" content="Komm an meinen Jass-Tisch! 🃏">
+<meta property="og:description" content="Jass Schieber & Coiffeur – jasse mit Freunden, jeder auf seinem Handy.">
+<meta property="og:image" content="https://flavio-art.github.io/icon.png">
+<style>
+  :root{--bg:#0d3b1f;--card:#14361f;--gold:#f5c518;--text:#fff;--muted:#cfe3cf}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+       min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px}
+  .box{max-width:420px;width:100%;background:var(--card);border:1px solid #2e7d4e;border-radius:18px;padding:24px;text-align:center}
+  img{width:96px;height:96px;border-radius:22px}
+  h1{font-size:22px;margin:14px 0 6px}
+  p{color:var(--muted);line-height:1.45;margin:6px 0}
+  .code{font-size:38px;font-weight:800;letter-spacing:8px;color:var(--gold);margin:14px 0 4px}
+  .btn{display:block;margin:10px 0;padding:14px;border-radius:12px;font-weight:700;text-decoration:none}
+  .open{background:var(--gold);color:#000}
+  .store{background:#fff;color:#000}
+  small{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="box">
+  <img src="/icon.png" alt="">
+  <h1 id="t">Du bist an einen Jass-Tisch eingeladen!</h1>
+  <p id="d">Öffne die App „Jass Schieber &amp; Coiffeur" – du trittst automatisch bei.</p>
+  <div class="code" id="code"></div>
+  <small id="h">Tisch-Code</small>
+  <a class="btn open" id="open" href="#">In der App öffnen</a>
+  <p id="n" style="margin-top:16px">Noch keine App? Gratis laden und danach den Code unter „Mit Freunden spielen" eingeben:</p>
+  <a class="btn store" href="https://apps.apple.com/ch/app/id6759911362">🍎 App Store (iPhone, iPad)</a>
+  <a class="btn store" href="https://play.google.com/store/apps/details?id=com.jass.jass_app">🤖 Google Play (Android)</a>
+</div>
+<script>
+  var code = (location.pathname.split('/j/')[1] || location.hash.slice(1) || '').replace(/[^A-Za-z0-9]/g,'').toUpperCase().slice(0,6);
+  document.getElementById('code').textContent = code || '—';
+  document.getElementById('open').href = 'jassapp://join/' + code;
+  var L = (navigator.language||'de').slice(0,2);
+  var T = {
+    fr:['Tu es invité·e à une table de jass !','Ouvre l\'app « Jass Schieber & Coiffeur » – tu rejoins automatiquement.','Code de la table','Ouvrir dans l\'app','Pas encore l\'app ? Télécharge-la gratuitement puis saisis le code sous « Jouer entre amis » :'],
+    it:['Sei invitato/a a un tavolo di Jass!','Apri l\'app «Jass Schieber & Coiffeur» – ti unisci automaticamente.','Codice del tavolo','Apri nell\'app','Non hai ancora l\'app? Scaricala gratis e inserisci il codice in «Gioca con gli amici»:'],
+    en:['You\'re invited to a Jass table!','Open the app "Jass Schieber & Coiffeur" – you\'ll join automatically.','Table code','Open in the app','Don\'t have the app yet? Get it for free, then enter the code under "Play with friends":']
+  }[L];
+  if (T) { ['t','d','h','open','n'].forEach(function(id,i){ document.getElementById(id).textContent = T[i]; }); }
+</script>
+</body>
+</html>
