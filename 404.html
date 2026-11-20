@@ -31,7 +31,7 @@
   <div class="code" id="code"></div>
   <small id="h">Tisch-Code</small>
   <a class="btn open" id="open" href="#">In der App öffnen</a>
-  <p id="n" style="margin-top:16px">Noch keine App? Gratis laden und danach den Code unter „Mit Freunden spielen" eingeben:</p>
+  <p id="n" style="margin-top:16px">Noch keine App – oder öffnet sich die App nicht? Gratis laden bzw. <b>auf die neuste Version aktualisieren</b> und danach den Code unter „Mit Freunden spielen" eingeben:</p>
   <a class="btn store" href="https://apps.apple.com/ch/app/id6759911362">🍎 App Store (iPhone, iPad)</a>
   <a class="btn store" href="https://play.google.com/store/apps/details?id=com.jass.jass_app">🤖 Google Play (Android)</a>
 </div>
@@ -41,9 +41,9 @@
   document.getElementById('open').href = 'jassapp://join/' + code;
   var L = (navigator.language||'de').slice(0,2);
   var T = {
-    fr:['Tu es invité·e à une table de jass !','Ouvre l\'app « Jass Schieber & Coiffeur » – tu rejoins automatiquement.','Code de la table','Ouvrir dans l\'app','Pas encore l\'app ? Télécharge-la gratuitement puis saisis le code sous « Jouer entre amis » :'],
-    it:['Sei invitato/a a un tavolo di Jass!','Apri l\'app «Jass Schieber & Coiffeur» – ti unisci automaticamente.','Codice del tavolo','Apri nell\'app','Non hai ancora l\'app? Scaricala gratis e inserisci il codice in «Gioca con gli amici»:'],
-    en:['You\'re invited to a Jass table!','Open the app "Jass Schieber & Coiffeur" – you\'ll join automatically.','Table code','Open in the app','Don\'t have the app yet? Get it for free, then enter the code under "Play with friends":']
+    fr:['Tu es invité·e à une table de jass !','Ouvre l\'app « Jass Schieber & Coiffeur » – tu rejoins automatiquement.','Code de la table','Ouvrir dans l\'app','Pas encore l\'app – ou elle ne s\'ouvre pas ? Télécharge-la ou mets-la à jour, puis saisis le code sous « Jouer entre amis » :'],
+    it:['Sei invitato/a a un tavolo di Jass!','Apri l\'app «Jass Schieber & Coiffeur» – ti unisci automaticamente.','Codice del tavolo','Apri nell\'app','Non hai ancora l\'app – o non si apre? Scaricala o aggiornala, poi inserisci il codice in «Gioca con gli amici»:'],
+    en:['You\'re invited to a Jass table!','Open the app "Jass Schieber & Coiffeur" – you\'ll join automatically.','Table code','Open in the app','No app yet – or it doesn\'t open? Get it or update it, then enter the code under "Play with friends":']
   }[L];
   if (T) { ['t','d','h','open','n'].forEach(function(id,i){ document.getElementById(id).textContent = T[i]; }); }
 </script>
